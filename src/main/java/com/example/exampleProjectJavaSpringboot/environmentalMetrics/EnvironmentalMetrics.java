@@ -20,6 +20,8 @@ public class EnvironmentalMetrics {
 
     private double humidity;
 
+    private String room;
+
 
     public void setCreated_at() {
         this.created_at = LocalDateTime.now();
@@ -29,6 +31,9 @@ public class EnvironmentalMetrics {
     }
     public void setHumidity(double humidity) {
         this.humidity = humidity;
+    }
+    public void setRoom(String room) {
+        this.room = room;
     }
 
     public Integer getId() {
@@ -42,5 +47,8 @@ public class EnvironmentalMetrics {
     }
     public double getTemperature() {
         return temperature;
+    }
+    public String getRoom() {
+        return room;
     }
 }

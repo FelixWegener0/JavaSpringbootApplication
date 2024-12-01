@@ -18,5 +18,6 @@ CREATE TABLE IF NOT EXISTS environmentalMetrics (
     id int AUTO_INCREMENT PRIMARY KEY,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     temperature DOUBLE,
-    humidity DOUBLE
+    humidity DOUBLE,
+    room varchar(100)
 );
