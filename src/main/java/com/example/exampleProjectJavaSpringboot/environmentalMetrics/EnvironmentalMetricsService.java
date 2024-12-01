@@ -33,7 +33,7 @@ public class EnvironmentalMetricsService {
         List<EnvironmentalMetrics> result = new ArrayList<EnvironmentalMetrics>();
 
         data.forEach((value) -> {
-            if (value.getCreated_at().isEqual(LocalDate.now())) {
+            if (value.getCreated_at().toLocalDate().isEqual(LocalDate.now())) {
                 result.add(value);
             }
         });

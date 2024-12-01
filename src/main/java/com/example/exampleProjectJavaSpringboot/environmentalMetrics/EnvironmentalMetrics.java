@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 public class EnvironmentalMetrics {
@@ -14,7 +14,7 @@ public class EnvironmentalMetrics {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private LocalDate created_at;
+    private LocalDateTime created_at;
 
     private double temperature;
 
@@ -22,7 +22,7 @@ public class EnvironmentalMetrics {
 
 
     public void setCreated_at() {
-        this.created_at = LocalDate.now();
+        this.created_at = LocalDateTime.now();
     }
     public void setTemperature(double temperature) {
         this.temperature = temperature;
@@ -34,7 +34,7 @@ public class EnvironmentalMetrics {
     public Integer getId() {
         return id;
     }
-    public LocalDate getCreated_at() {
+    public LocalDateTime getCreated_at() {
         return created_at;
     }
     public double getHumidity() {
