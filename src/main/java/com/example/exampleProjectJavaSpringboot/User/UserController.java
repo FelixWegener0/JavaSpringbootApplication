@@ -4,32 +4,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping(path = "/user")
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addNewUser (@RequestParam String first_name, @RequestParam String last_name) {
-        User user = new User();
+    public @ResponseBody String addNewUser (@RequestParam String first_name, @RequestParam String last_name, @RequestParam String mobileAppToken) {
+        return userService.createNewUser(first_name, last_name, mobileAppToken);
+    }
 
-        user.setFirst_name(first_name);
-        user.setLast_name(last_name);
-        user.setCreatedAt();
-
-        userRepository.save(user);
-        return "saved";
+    @PostMapping(path = "/updateMobileAppToken")
+    public @ResponseBody String updateUserAppToken(@RequestParam String token, @RequestParam Integer id) {
+        return userService.updateMobileAppToken(token, id);
     }
 
     @GetMapping(path = "/all")
     public @ResponseBody Iterable<User> getAllUsers() {
-        return userRepository.findAll();
+        return userService.getAllUsers();
     }
 
-    @GetMapping(path = "findById")
-    public @ResponseBody Iterable<User> getUserById(@RequestParam Iterable<Integer> id) {
-        return userRepository.findAllById(id);
+    @GetMapping(path = "/findById")
+    public @ResponseBody Optional<User> getUserById(@RequestParam Integer id) {
+        return userService.getUserById(id);
     }
 }

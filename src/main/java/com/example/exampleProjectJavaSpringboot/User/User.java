@@ -1,9 +1,6 @@
 package com.example.exampleProjectJavaSpringboot.User;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -21,6 +18,8 @@ public class User {
 
     private LocalDateTime created_at;
 
+    private String mobileAppToken;
+
 
     public Integer getId() {
         return id;
@@ -34,6 +33,9 @@ public class User {
     public LocalDateTime getCreated_at() {
         return created_at;
     }
+    public String getMobileAppToken() {
+        return mobileAppToken;
+    }
 
     public void setCreatedAt() {
         this.created_at = LocalDateTime.now();
@@ -43,5 +45,8 @@ public class User {
     }
     public void setLast_name(String last_name) {
         this.last_name = last_name;
+    }
+    public void setMobileAppToken(String token) {
+        this.mobileAppToken = token;
     }
 }
