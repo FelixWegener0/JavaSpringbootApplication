@@ -31,7 +31,7 @@ public class UserService {
             userRepository.save(value);
             System.out.println("updated mobileAppToken");
         }, () -> {
-            System.out.println("try to update mobileAppToken no user found");
+            System.out.println("try to update mobileAppToken no user found with id: " + userId);
         });
 
         return "updated";
