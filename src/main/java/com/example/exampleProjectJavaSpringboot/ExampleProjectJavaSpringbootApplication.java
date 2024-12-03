@@ -3,6 +3,7 @@ package com.example.exampleProjectJavaSpringboot;
 import com.google.auth.oauth2.GoogleCredentials;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -10,13 +11,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 @Configuration
 @EnableScheduling
 @SpringBootApplication
 public class ExampleProjectJavaSpringbootApplication {
+
+	private static boolean enableFirebase = true;
 
 	public static void initFireBaseApp() throws IOException {
 		FileInputStream serviceAccount = new FileInputStream("hygrometer-8de9a-firebase-adminsdk-g7iae-b3f09dcbe2.json");
@@ -29,7 +31,7 @@ public class ExampleProjectJavaSpringbootApplication {
 	}
 
 	public static void main(String[] args) throws IOException {
-		initFireBaseApp();
+		if (enableFirebase) initFireBaseApp();
 		SpringApplication.run(ExampleProjectJavaSpringbootApplication.class, args);
 	}
 
