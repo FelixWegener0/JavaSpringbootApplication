@@ -18,7 +18,7 @@ import java.io.IOException;
 @SpringBootApplication
 public class ExampleProjectJavaSpringbootApplication {
 
-	private static boolean enableFirebase = true;
+	private static boolean enableFirebase = false;
 
 	public static void initFireBaseApp() throws IOException {
 		FileInputStream serviceAccount = new FileInputStream("hygrometer-8de9a-firebase-adminsdk-g7iae-b3f09dcbe2.json");
