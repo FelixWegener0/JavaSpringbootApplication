@@ -31,7 +31,7 @@ public class ExampleProjectJavaSpringbootApplication {
 	}
 
 	public static void main(String[] args) throws IOException {
-		if (enableFirebase) initFireBaseApp();
+
 		SpringApplication.run(ExampleProjectJavaSpringbootApplication.class, args);
 	}
 

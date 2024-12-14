@@ -1,4 +1,4 @@
-package com.example.exampleProjectJavaSpringboot.SmsSender;
+package com.example.exampleProjectJavaSpringboot.HttpRequests;
 
 import okhttp3.Headers;
 import okhttp3.OkHttpClient;
@@ -7,7 +7,7 @@ import okhttp3.Response;
 
 import java.io.IOException;
 
-public class SmsSender {
+public class HttpRequests {
 
     private static final OkHttpClient client = new OkHttpClient();
 
